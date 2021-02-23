@@ -60,13 +60,13 @@ async def e(o):
         b = o.builder
         uptime = grt((time.time() - start_time))
         ALIVEMSG = """
-**The Ultroid Userbot...**\n\n
-✵ **Owner** - `{}`
-✵ **Ultroid** - `{}`
-✵ **UpTime** - `{}`
-✵ **Python** - `{}`
-✵ **Telethon** - `{}`
-✵ **Branch** - `{}`
+**...ULTROID-2.0 USERBOT...**\n\n
+➥ **Owner** - `{}`
+➥ **Ultroid** - `{}`
+➥ **UpTime** - `{}`
+➥ **Python** - `{}`
+➥ **Telethon** - `{}`
+➥ **Branch** - `{}`
 """.format(
             OWNER_NAME,
             ultroid_version,
@@ -77,7 +77,7 @@ async def e(o):
         )
         res = [
             b.article(
-                title="Ultroid Userbot",
+                title="UlLTROID-2.0 USERBOT",
                 url="https://t.me/TeamUltroid",
                 description="Userbot | Telethon ",
                 text=ALIVEMSG,
@@ -119,11 +119,11 @@ if Var.BOT_USERNAME is not None and asst is not None:
             link_raw = f"https://nekobin.com/raw/{ok}"
             result = builder.article(
                 title="Paste",
-                text="Pᴀsᴛᴇᴅ Tᴏ Nᴇᴋᴏʙɪɴ!",
+                text="Pᴀsᴛᴇᴅ Tᴏ Nᴇᴋᴏʙɪɴ!✅",
                 buttons=[
                     [
-                        Button.url("NekoBin", url=f"{link}"),
-                        Button.url("Raw", url=f"{link_raw}"),
+                        Button.url("NekoBin 👀", url=f"{link}"),
+                        Button.url("Raw 👀", url=f"{link_raw}"),
                     ]
                 ],
             )
