@@ -24,9 +24,9 @@ async def alvcs(event):
     await event.edit(
         "Customise your {}alive. Choose from the below options -".format(Var.HNDLR),
         buttons=[
-            [Button.inline("Alive Text", data="alvtx")],
-            [Button.inline("Alive Media", data="alvmed")],
-            [Button.inline("Delete Alive Media", data="delmed")],
+            [Button.inline("Alive Text 💬", data="alvtx")],
+            [Button.inline("Alive Media 🖼", data="alvmed")],
+            [Button.inline("Delete Alive Media 🏷", data="delmed")],
         ],
     )
 
@@ -46,7 +46,7 @@ async def name(event):
         response = await response
         themssg = response.message.message
         if themssg == "/cancel":
-            return await conv.send_message("Cancelled!!")
+            return await conv.send_message("**Cancelled the current operation Successfully!! ☑️☑️**")
         else:
             await setit(event, var, themssg)
             await conv.send_message("{} changed to {}".format(name, themssg))
@@ -67,7 +67,7 @@ async def media(event):
         try:
             themssg = response.message.message
             if themssg == "/cancel":
-                return await conv.send_message("Operation cancelled!!")
+                return await conv.send_message("**Cancelled the current operation Successfully!! ☑️☑️**")
         except BaseException:
             pass
         media = await event.client.download_media(response, "alvpc")
@@ -79,9 +79,9 @@ async def media(event):
                 url = f"https://telegra.ph/{x[0]}"
                 os.remove(media)
             except BaseException:
-                return await conv.send_message("Terminated.")
+                return await conv.send_message("Terminated!.!.!")
         await setit(event, var, url)
-        await conv.send_message("{} has been set.".format(name))
+        await conv.send_message("__{}__ has been set.".format(name))
 
 
 @callback("delmed")
@@ -89,6 +89,6 @@ async def media(event):
 async def dell(event):
     try:
         udB.delete("ALIVE_PIC")
-        return await event.edit("Done!")
+        return await event.edit("Done! 👌🏻")
     except BaseException:
         return await event.edit("Something went wrong...")
