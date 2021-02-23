@@ -57,17 +57,17 @@ async def set_not_afk(event):
                 shite = await ultroid_bot.send_message(event.chat_id, file=pic)
                 shites = await ultroid_bot.send_message(
                     event.chat_id,
-                    "`No Longer Afk`\n\nWas afk for~`" + total_afk_time + "`",
+                    "`No Longer Afk`\n\nWas afk for~ " + total_afk_time + " ",
                 )
             else:
                 shite = await ultroid_bot.send_message(
                     event.chat_id,
-                    "`No Longer Afk`\n\nWas afk for~ " + total_afk_time + "`",
+                    "`No Longer Afk`\n\nWas afk for~ " + total_afk_time + " ",
                     file=pic,
                 )
         except BaseException:
             shite = await ultroid_bot.send_message(
-                event.chat_id, "`No Longer Afk`\nWas afk for " + total_afk_time + "`"
+                event.chat_id, "`No Longer Afk`\nWas afk for " + total_afk_time + " "
             )
         try:
             try:
@@ -78,7 +78,7 @@ async def set_not_afk(event):
                         "#AFKFALSE \nSet AFK mode to False\n"
                         + "Back alive!\nNo Longer afk.\nWas afk for  "
                         + total_afk_time
-                        + "`",
+                        + " ",
                     )
                 else:
                     await ultroid_bot.send_message(
@@ -86,16 +86,16 @@ async def set_not_afk(event):
                         "#AFKFALSE \nSet AFK mode to False\n"
                         + "Back alive!\nNo Longer afk.\nWas afk for  "
                         + total_afk_time
-                        + "`",
+                        + " ",
                         file=pic,
                     )
             except BaseException:
                 await ultroid_bot.send_message(
                     LOG,
                     "#AFKFALSE \nSet AFK mode to False\n"
-                    + "Back alive!\nNo Longer afk.\nWas afk for `"
+                    + "Back alive!\nNo Longer afk.\nWas afk for  "
                     + total_afk_time
-                    + "`",
+                    + " ",
                 )
         except BaseException:
             pass
