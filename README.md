@@ -25,7 +25,7 @@ For real repo, visit [HERE](https://github.com/TeamUltroid/Ultroid)</i></b>
 </details>
 
 # Deploy 
-- [Heroku](https://github.com/TeamUltroid/Ultroid#Deploy-to-Heroku)
+- [Heroku](https://github.com/madboy482/Ultroid-Advanced#Deploy-to-Heroku)
 - [Local Machine](https://github.com/madboy482/Ultroid-Advanced#Deploy-Locally)
 
 ## Deploy to Heroku
