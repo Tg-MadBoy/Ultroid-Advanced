@@ -110,7 +110,7 @@ async def _(event):
     end = dt.now()
     ms = (end - start).microseconds / 1000
     uptime = grt((time.time() - start_time))
-    await x.edit(f"<b><i>☞ Pong!!</b></i>\n➥ `{ms}ms`\n➥ <b>Uptime</b> - `{uptime}`")
+    await x.edit(f"<b><i>☞ Pong!!</i></b>\n➥ `{ms}ms`\n➥ **Uptime** - `{uptime}`")
 
 
 @ultroid_cmd(
