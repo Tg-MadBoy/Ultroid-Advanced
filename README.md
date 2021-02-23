@@ -8,7 +8,7 @@ For real repo, visit [HERE](https://github.com/TeamUltroid/Ultroid)</i></b>
 ## If you are using this repo for yourself, I don't take guaranttee for the errors and lags in your userbots. Better use the <b><i><u>[official one](https://github.com/TeamUltroid/Ultroid)</u></i></b>.
 
 <p align="center">
-  <img src="./resources/extras/logo_rdm.png" alt="TeamUltroid">
+  <img src="./resources/extras/logo_rdm.png" alt="Ultroid-Advanced">
 </p>
 
 [![Stars](https://img.shields.io/github/stars/madboy482/Ultroid-Advanced?style=social)](https://github.com/madboy482/Ultroid-Advanced/stargazers)
@@ -33,13 +33,13 @@ For real repo, visit [HERE](https://github.com/TeamUltroid/Ultroid)</i></b>
 - Get your `SESSION` from [HERE](https://repl.it/@TeamUltroid/UltroidStringSession#main.py).   
 and click the below button!  <br />  
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmadboy482%2FUltroid-Advanced&template=https%3A%2F%2Fgithub.com%2Fmadboy482%2FUltroid-Advanced)
 
 ## Deploy Locally
 - Get your `API_ID` and `API_HASH` from [HERE](https://my.telegram.org/)
 - Get your `REDIS_URI` and `REDIS_PASSWORD` from [HERE](https://redislabs.com), tutorial [here](./resources/extras/redistut.md).
 - Clone the repository: <br />
-`git clone https://github.com/TeamUltroid/Ultroid.git`
+`git clone https://github.com/madboy482/Ultroid-Advanced.git`
 - Go to the cloned folder: <br />
 `cd Ultroid`
 - Create a virtual env:   <br />
