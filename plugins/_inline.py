@@ -68,7 +68,7 @@ async def e(o):
 ➥ **Telethon** - `{}`
 ➥ **Branch** - `{}`
 """.format(
-            OWNER_NAME,
+            [λ](https://telegram.me/Ninja_X_001),
             ultroid_version,
             uptime,
             pyver(),
