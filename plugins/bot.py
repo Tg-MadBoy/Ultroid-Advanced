@@ -69,16 +69,16 @@ async def lol(ult):
     uptime = grt((time.time() - start_time))
     header = udB.get("ALIVE_TEXT") if udB.get("ALIVE_TEXT") else "Hey,  I am alive."
     als = """
-**The Ultroid Userbot...**
+**...ULTROID-2.0 USERBOT...**
 
 **{}**
 
-✵ **Owner** - `{}`
-✵ **Ultroid** - `{}`
-✵ **UpTime** - `{}`
-✵ **Python** - `{}`
-✵ **Telethon** - `{}`
-✵ **Branch** - `{}`
+➥ **Owner** - `{}`
+➥ **Ultroid** - `{}`
+➥ **UpTime** - `{}`
+➥ **Python** - `{}`
+➥ **Telethon** - `{}`
+➥ **Branch** - `{}`
 """.format(
         header,
         OWNER_NAME,
@@ -110,7 +110,7 @@ async def _(event):
     end = dt.now()
     ms = (end - start).microseconds / 1000
     uptime = grt((time.time() - start_time))
-    await x.edit(f"**Pong !!** `{ms}ms`\n**Uptime** - `{uptime}`")
+    await x.edit(f"<b><i>☞ Pong!!</b></i>\n➥ `{ms}ms`\n➥ <b>Uptime</b> - `{uptime}`")
 
 
 @ultroid_cmd(
@@ -146,7 +146,7 @@ async def _(ult):
         ult.chat_id,
         "logs-ultroid.txt",
         reply_to=ult.id,
-        caption=f"**Heroku** Ultroid Logs.\nPasted [here]({url}) too!",
+        caption=f"**Heroku** ULTROID-2.0 Logs.\nPasted [HERE]({url}) too!",
     )
     await xx.edit("`Uploading...`")
     await asyncio.sleep(1)
