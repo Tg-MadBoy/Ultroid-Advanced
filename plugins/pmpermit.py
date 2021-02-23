@@ -15,13 +15,13 @@ from . import *
 # ========================= CONSTANTS =============================
 COUNT_PM = {}
 LASTMSG = {}
-PMPIC = "https://telegra.ph/file/94f6a4aeb21ce2d58dd41.jpg"
+PMPIC = "https://telegra.ph/file/051c4aee08c172ce7402a.jpg"
 UNAPPROVED_MSG = """
-**PMSecurity of {}!**
-Please wait for me to respnd or you will be blocked and reported as spam!!
+**PM Security of {}!**
+My Master is Busy...Please wait for him to respnd or else you will be blocked and reported as spam!!
 
 You have {}/{} warnings!"""
-WARNS = 3
+WARNS = 6
 NO_REPLY = "Reply to someone's msg or try this commmand in private."
 PMCMDS = [
     f"{hndlr}a",
@@ -102,7 +102,7 @@ if sett == "True" and sett != "False":
                     COUNT_PM[user.id] = COUNT_PM[user.id] + 1
                 if COUNT_PM[user.id] > WARNS:
                     await event.respond(
-                        "`You were spamming my Master's PM, which I didn't like.`\n`You have been BLOCKED and reported as SPAM, until further notice.`"
+                        "**You were spamming my Mighty Master's PM, which I didn't like.**\n**You have been BLOCKED and reported as SPAM, until further notice!!**"
                     )
                     try:
                         del COUNT_PM[user.id]
@@ -111,7 +111,7 @@ if sett == "True" and sett != "False":
                         if Var.LOG_CHANNEL:
                             await event.client.send_message(
                                 Var.LOG_CHANNEL,
-                                "PMPermit is messed! Pls restart the bot!!",
+                                "PM Permit is messed! Pls restart the bot!!",
                             )
                             return LOGS.info("COUNT_PM is messed.")
                     await event.client(BlockRequest(user.id))
@@ -121,7 +121,7 @@ if sett == "True" and sett != "False":
                         name0 = str(name.first_name)
                         await event.client.send_message(
                             Var.LOG_CHANNEL,
-                            f"[{name0}](tg://user?id={user.id}) was blocked for spamming.",
+                            f"**[{name0}](tg://user?id={user.id}) was blocked for spamming.**",
                         )
 
     @ultroid_cmd(pattern="(a|approve)(?: |$)")
@@ -134,11 +134,11 @@ if sett == "True" and sett != "False":
             uid = replied_user.id
             if not is_approved(uid):
                 approve_user(uid)
-                await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `approved to PM!`")
+                await apprvpm.edit(f"**[{name0}](tg://user?id={uid}) Approved to PM!**✅")
                 await asyncio.sleep(3)
                 await apprvpm.delete()
             else:
-                await apprvpm.edit("`User may already be approved.`")
+                await apprvpm.edit("**User may already be approved.**✅")
                 await asyncio.sleep(5)
                 await apprvpm.delete()
         elif apprvpm.is_private:
@@ -148,7 +148,7 @@ if sett == "True" and sett != "False":
             uid = user.id
             if not is_approved(uid):
                 approve_user(uid)
-                await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `approved to PM!`")
+                await apprvpm.edit(f"**[{name0}](tg://user?id={uid}) Approved to PM!**✅")
                 async for message in apprvpm.client.iter_messages(
                     user.id, from_user="me", search=UNAPPROVED_MSG
                 ):
@@ -161,7 +161,7 @@ if sett == "True" and sett != "False":
                         f"#APPROVED\nUser: [{name0}](tg://user?id={uid})",
                     )
             else:
-                await apprvpm.edit("`User may already be approved.`")
+                await apprvpm.edit("**User may already be approved.**✅")
                 await asyncio.sleep(5)
                 await apprvpm.delete()
                 if Var.LOG_CHANNEL:
@@ -182,13 +182,13 @@ if sett == "True" and sett != "False":
             if is_approved(replied_user.id):
                 disapprove_user(replied_user.id)
                 await e.edit(
-                    f"[{name0}](tg://user?id={replied_user.id}) `Disaproved to PM!`"
+                    f"**[{name0}](tg://user?id={replied_user.id}) Disaproved to PM!**✅"
                 )
                 await asyncio.sleep(5)
                 await e.delete()
             else:
                 await e.edit(
-                    f"[{name0}](tg://user?id={replied_user.id}) was never approved!"
+                    f"**[{name0}](tg://user?id={replied_user.id}) was never approved!**✅"
                 )
                 await asyncio.sleep(5)
                 await e.delete()
@@ -198,16 +198,16 @@ if sett == "True" and sett != "False":
             name0 = str(aname.first_name)
             if is_approved(bbb.id):
                 disapprove_user(bbb.id)
-                await e.edit(f"[{name0}](tg://user?id={bbb.id}) `Disaproved to PM!`")
+                await e.edit(f"**[{name0}](tg://user?id={bbb.id}) Disaproved to PM!**✅")
                 await asyncio.sleep(5)
                 await e.delete()
                 if Var.LOG_CHANNEL:
                     await e.client.send_message(
                         Var.LOG_CHANNEL,
-                        f"[{name0}](tg://user?id={bbb.id}) was disapproved to PM you.",
+                        f"**[{name0}](tg://user?id={bbb.id}) was Disapproved to PM you.**✅",
                     )
             else:
-                await e.edit(f"[{name0}](tg://user?id={bbb.id}) was never approved!")
+                await e.edit(f"**[{name0}](tg://user?id={bbb.id}) was never approved!**✅")
                 await asyncio.sleep(5)
                 await e.delete()
         else:
@@ -221,13 +221,13 @@ if sett == "True" and sett != "False":
             aname = replied_user.id
             name0 = str(replied_user.first_name)
             await block.client(BlockRequest(replied_user.id))
-            await block.edit("`You've been blocked!`")
+            await block.edit("🚫 **You've been blocked!** 🚫")
             uid = replied_user.id
         elif block.is_private:
             bbb = await block.get_chat()
             await block.client(BlockRequest(bbb.id))
             aname = await block.client.get_entity(bbb.id)
-            await block.edit("`You've been blocked!`")
+            await block.edit("🚫 **You've been blocked!** 🚫")
             name0 = str(aname.first_name)
             uid = bbb.id
         else:
@@ -248,11 +248,11 @@ if sett == "True" and sett != "False":
             replied_user = await unblock.client.get_entity(reply.sender_id)
             name0 = str(replied_user.first_name)
             await unblock.client(UnblockRequest(replied_user.id))
-            await unblock.edit("`You have been unblocked.`")
+            await unblock.edit("🔰 **You have been unblocked.** 🔰")
         else:
             await unblock.edit(NO_REPLY)
         if Var.LOG_CHANNEL:
             await unblock.client.send_message(
                 Var.LOG_CHANNEL,
-                f"[{name0}](tg://user?id={replied_user.id}) was unblocked!.",
+                f"🔰 **[{name0}](tg://user?id={replied_user.id}) was unblocked!.** 🔰",
             )
