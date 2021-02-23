@@ -38,7 +38,7 @@ async def tagloggerr(event):
         response = await response
         themssg = response.message.message
         if themssg == "/cancel":
-            return await conv.send_message("Cancelled!!")
+            return await conv.send_message("**Cancelled the current operation Successfully!! ☑️☑️**")
         else:
             await setit(event, var, themssg)
             await conv.send_message("{} changed to {}".format(name, themssg))
@@ -95,7 +95,7 @@ async def sfgrp(event):
         response = await response
         themssg = response.message.message
         if themssg == "/cancel":
-            return await conv.send_message("Cancelled!!")
+            return await conv.send_message("**Cancelled the current operation Successfully!! ☑️☑️**")
         else:
             await setit(event, var, themssg)
             await conv.send_message("{} changed to {}".format(name, themssg))
@@ -114,7 +114,7 @@ async def sfexf(event):
         response = await response
         themssg = response.message.message
         if themssg == "/cancel":
-            return await conv.send_message("Cancelled the current operation Successfully!! ☑️☑️")
+            return await conv.send_message("**Cancelled the current operation Successfully!! ☑️☑️**")
         else:
             await setit(event, var, themssg)
             await conv.send_message("{} changed to {}".format(name, themssg))
