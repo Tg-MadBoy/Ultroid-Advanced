@@ -5,10 +5,12 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-from telethon import  events, custom
+from telethon import custom, events
+from telethon.tl.types import Channel
 from telethon.utils import get_display_name
 
 from . import *
+
 
 @ultroid_bot.on(
     events.NewMessage(
@@ -16,40 +18,34 @@ from . import *
         func=lambda e: (e.mentioned),
     )
 )
-async def all_messages_catcher(e):
+async def all_messages_catcher(event):
     if udB.get("TAG_LOG") is not None:
         NEEDTOLOG = int(udB.get("TAG_LOG"))
-        x = await ultroid_bot.get_entity(e.sender_id)
-        if x.bot:
+        await event.forward_to(NEEDTOLOG)
+        ammoca_message = ""
+        who_ = await event.client.get_entity(event.sender_id)
+        if who_.bot or who_.verified or who_.support:
             return
-        y = await ultroid_bot.get_entity(e.chat_id)
-        xx = f"[{get_display_name(x)}](tg://user?id={x.id})"
-        yy = f"[{get_display_name(y)}](https://t.me/c/{y.id})"
-        msg = f"https://t.me/c/{y.id}/{e.id}"
-        if e.text:
-            cap = f"{xx} tagged you in {yy}\n\n```{e.text}```\nㅤ"
+        who_m = f"[{get_display_name(who_)}](tg://user?id={who_.id})"
+        where_ = await event.client.get_entity(event.chat_id)
+        where_m = get_display_name(where_)
+        button_text = "📨 Go to Message  "
+        if isinstance(where_, Channel):
+            message_link = f"https://t.me/c/{where_.id}/{event.id}"
+            chat_link = f"https://t.me/c/{where_.id}"
         else:
-            cap = f"{xx} tagged you in {yy}"
-        btx = "📨 View Message"
+            message_link = f"tg://openmessage?chat_id={where_.id}&message_id={event.id}"
+            chat_link = f"tg://openmessage?chat_id={where_.id}"
+        ammoca_message += f"{who_m} tagged you in [{where_m}]({chat_link})"
         try:
             await asst.send_message(
-                NEEDTOLOG,
-                cap,
+                entity=NEEDTOLOG,
+                message=ammoca_message,
                 link_preview=False,
-                buttons=[[custom.Button.url(btx, msg)]]
+                buttons=[[custom.Button.url(button_text, message_link)]],
+                silent=True,
             )
         except BaseException:
-            if e.text:
-                cap = f"{xx} tagged you in {yy}\n\n```{e.text}```\n\n[📨Message📨]({msg})"
-            else:
-                cap = f"{xx} tagged you in {yy}\n\n [📨Message📨]({msg})"
-            try:
-                await ultroid_bot.send_message(
-                    NEEDTOLOG,
-                    cap,
-                    link_preview=False
-                )
-            except BaseException:
-                pass
+            pass
     else:
         return
