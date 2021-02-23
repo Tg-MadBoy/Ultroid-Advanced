@@ -62,12 +62,12 @@ async def set_not_afk(event):
             else:
                 shite = await ultroid_bot.send_message(
                     event.chat_id,
-                    "`No Longer Afk`\n\nWas afk for~`" + total_afk_time + "`",
+                    "`No Longer Afk`\n\nWas afk for~ " + total_afk_time + "`",
                     file=pic,
                 )
         except BaseException:
             shite = await ultroid_bot.send_message(
-                event.chat_id, "`No Longer Afk`\nWas afk for" + total_afk_time + "`"
+                event.chat_id, "`No Longer Afk`\nWas afk for " + total_afk_time + "`"
             )
         try:
             try:
@@ -76,7 +76,7 @@ async def set_not_afk(event):
                     await ultroid_bot.send_message(
                         LOG,
                         "#AFKFALSE \nSet AFK mode to False\n"
-                        + "Back alive!\nNo Longer afk.\nWas afk for `"
+                        + "Back alive!\nNo Longer afk.\nWas afk for  "
                         + total_afk_time
                         + "`",
                     )
@@ -84,7 +84,7 @@ async def set_not_afk(event):
                     await ultroid_bot.send_message(
                         LOG,
                         "#AFKFALSE \nSet AFK mode to False\n"
-                        + "Back alive!\nNo Longer afk.\nWas afk for `"
+                        + "Back alive!\nNo Longer afk.\nWas afk for  "
                         + total_afk_time
                         + "`",
                         file=pic,
