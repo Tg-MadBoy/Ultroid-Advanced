@@ -5,7 +5,7 @@ A stable pluggable Telegram userbot, based on Telethon.
 This is not the real repository, just made it with some changes for myself.....
 For real repo, visit [HERE](https://github.com/TeamUltroid/Ultroid)</i></b>
 
-## If you are using this repo for yourself, I don't take guaranttee for the errors and lags in your userbots. Better use the <b><i><u>[official one](https://github.com/TeamUltroid/Ultroid)</u></i></b>
+## If you are using this repo for yourself, I don't take guaranttee for the errors and lags in your userbots. Better use the <b><i><u>[official one](https://github.com/TeamUltroid/Ultroid)</u></i></b>.
 
 <p align="center">
   <img src="./resources/extras/logo_rdm.png" alt="TeamUltroid">
