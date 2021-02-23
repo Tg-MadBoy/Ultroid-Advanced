@@ -7,5 +7,5 @@ FROM python:3.9.2
 RUN chmod +x /usr/local/bin/*
 RUN wget https://raw.githubusercontent.com/madboy482/Ultroid-Advanced/main/resources/startup/deploy.sh
 RUN sh deploy.sh
-WORKDIR /root/madboy482/
+WORKDIR /root/Ultroid-Advanced/
 CMD ["bash", "resources/startup/startup.sh"]
