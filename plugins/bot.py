@@ -104,7 +104,7 @@ async def lol(ult):
 )
 async def _(event):
     start = dt.now()
-    x = await eor(event, "`Pong !`")
+    x = await eor(event, "__☞ Pong!!__")
     if event.fwd_from:
         return
     end = dt.now()
