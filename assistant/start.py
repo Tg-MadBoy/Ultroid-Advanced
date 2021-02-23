@@ -18,13 +18,13 @@ from . import *
 @asst_cmd("start")
 async def assistant(event):
     if event.is_group and event.sender_id in sed:
-        return await eor(event, "`I dont work in groups`")
+        return await eor(event, "**I dont work in groups!!**")
     else:
         if not is_added(event.sender_id) and event.sender_id not in sed:
             add_user(event.sender_id)
             await asst.send_message(
                 OWNER_ID,
-                f"Bot started by [{event.sender_id}](tg://user?id={event.sender_id})",
+                f"**Bot started by <i>[{event.sender_id}](tg://user?id={event.sender_id})</i>**",
             )
         ok = ""
         if Var.MSG_FRWD is True:
@@ -32,8 +32,8 @@ async def assistant(event):
         if event.is_private and event.sender_id in sed:
             return
         await event.reply(
-            f"Hey there, this is Ultroid Assistant of {OWNER_NAME}!\n\n{ok}",
-            buttons=[Button.url("Know More", url="https://t.me/TeamUltroid")],
+            f"**Hey there, this is <u><i>ULTROID-2.0 ASSISTANT</i></u> of <i>@Warning_MadBoy_is_Here</i>!!**\n\n{ok}",
+            buttons=[Button.url("Know More 🤔", url="https://t.me/TeamUltroid")],
         )
 
 
@@ -44,11 +44,11 @@ async def ultroid(event):
         return
     await asst.send_message(
         event.chat_id,
-        f"Hi {OWNER_NAME}. Please browse through the options",
+        f"**Hi <i>@Warning_MadBoy_is_Here</i>. Please browse through the options!**",
         buttons=[
             [custom.Button.inline("Settings ⚙️", data="setter")],
-            [custom.Button.inline("Stats", data="stat")],
-            [custom.Button.inline("Broadcast", data="bcast")],
+            [custom.Button.inline("Stats 📈", data="stat")],
+            [custom.Button.inline("Broadcast 📢", data="bcast")],
         ],
     )
 
@@ -57,7 +57,7 @@ async def ultroid(event):
 @owner
 async def botstat(event):
     ok = len(get_all_users())
-    msg = """Ultroid Assistant - Stats
+    msg = """ULTROID-2.0 ASSISTANT - Stats
 Total Users - {}""".format(
         ok
     )
@@ -93,10 +93,10 @@ async def bdcast(event):
             time_taken = (end - start).seconds
             await conv.send_message(
                 f"""
-Broadcast completed in {time_taken} seconds.
-Total Users in Bot - {len(ok)}
-Sent to {success} users.
-Failed for {fail} user(s)."""
+Broadcast completed in {time_taken} seconds. ✅✅
+Total Users in Bot - {len(ok)} 👀
+Sent to {success} users. ☑️☑️
+Failed for {fail} user(s). ❌❌"""
             )
 
 
