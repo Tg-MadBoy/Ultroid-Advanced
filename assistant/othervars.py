@@ -16,9 +16,9 @@ async def otvaar(event):
     await event.edit(
         "Other Variables to set for @TheUltroid:",
         buttons=[
-            [Button.inline("Tag Logger", data="taglog")],
-            [Button.inline("PM Permit", data="pmset")],
-            [Button.inline("SuperFban", data="sfban")]
+            [Button.inline("Tag Logger 📣", data="taglog")],
+            [Button.inline("PM Permit ✅", data="pmset")],
+            [Button.inline("SuperFban 🌐", data="sfban")]
         ],
     )
 
@@ -50,8 +50,8 @@ async def pmset(event):
     await event.edit(
         "PMPermit Settings:",
         buttons=[
-            [Button.inline("Turn PMPermit On", data="pmon")],
-            [Button.inline("Turn PMPermit Off", data="pmoff")],
+            [Button.inline("Turn PMPermit On ✅", data="pmon")],
+            [Button.inline("Turn PMPermit Off ❌", data="pmoff")],
         ],
     )
 
@@ -90,7 +90,7 @@ async def sfgrp(event):
     var = "FBAN_GROUP_ID"
     pru = event.sender_id
     async with asst.conversation(pru) as conv:
-        await conv.send_message(f"Make a group, add @MissRose_Bot, send `{hndlr}id`, copy that and send it here.\nUse /cancel to go back.")
+        await conv.send_message(f"Make a group, add @Romeo1Bot, send `{hndlr}id`, copy that and send it here.\nUse /cancel to go back.")
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
         themssg = response.message.message
@@ -114,7 +114,7 @@ async def sfexf(event):
         response = await response
         themssg = response.message.message
         if themssg == "/cancel":
-            return await conv.send_message("Cancelled!!")
+            return await conv.send_message("Cancelled the current operation Successfully!! ☑️☑️")
         else:
             await setit(event, var, themssg)
             await conv.send_message("{} changed to {}".format(name, themssg))
